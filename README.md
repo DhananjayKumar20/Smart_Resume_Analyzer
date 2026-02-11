@@ -1,8 +1,8 @@
-# Resume Analyzer API
+# 📋 Resume Analyzer API
 
 A comprehensive backend service for analyzing resumes and comparing them with job descriptions using intelligent parsing algorithms and ATS (Applicant Tracking System) scoring mechanisms.
 
-## Table of Contents
+## 📑 Table of Contents
 - [Project Overview](#project-overview)
 - [Tech Stack](#tech-stack)
 - [Features](#features)
@@ -17,7 +17,7 @@ A comprehensive backend service for analyzing resumes and comparing them with jo
 
 ---
 
-## Project Overview
+## 🎯 Project Overview
 
 The Resume Analyzer API is a robust Spring Boot application designed to help job seekers optimize their resumes and understand how well they match specific job requirements. The system provides:
 
@@ -27,7 +27,7 @@ The Resume Analyzer API is a robust Spring Boot application designed to help job
 - **Improvement Suggestions**: Provides actionable feedback for resume enhancement
 - **Data Persistence**: Stores analysis results for future reference
 
-### Key Capabilities
+### 🔑 Key Capabilities
 - Section-aware parsing (distinguishes between resume sections)
 - Case-insensitive skill matching
 - Duplicate removal with order preservation
@@ -37,7 +37,7 @@ The Resume Analyzer API is a robust Spring Boot application designed to help job
 
 ---
 
-## Tech Stack
+## 🛠️ Tech Stack
 
 ### Programming Languages
 - **Java** (JDK 21)
@@ -67,7 +67,7 @@ The Resume Analyzer API is a robust Spring Boot application designed to help job
 
 ---
 
-## Features
+## ✨ Features
 
 ### 1. Resume Analysis
 - Extracts technical skills from dedicated skills section
@@ -99,7 +99,7 @@ The Resume Analyzer API is a robust Spring Boot application designed to help job
 
 ---
 
-## Architecture
+## 🏗️ Architecture
 
 ### System Architecture
 ```
@@ -175,7 +175,7 @@ The Resume Analyzer API is a robust Spring Boot application designed to help job
 
 ---
 
-## Setup Instructions
+## 🚀 Setup Instructions
 
 ### Prerequisites
 - JDK 21 or higher
@@ -247,7 +247,7 @@ The Resume Analyzer API is a robust Spring Boot application designed to help job
 
 ---
 
-## API Documentation
+## 📚 API Documentation
 
 ### Base URL
 ```
@@ -268,7 +268,7 @@ All API responses follow a consistent structure:
 
 ---
 
-### Endpoints Overview
+### 📋 Endpoints Overview
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
@@ -764,27 +764,26 @@ GET /api/health
   "data": "Resume Analyzer API is running!",
   "error": null
 }
-
 ```
 
 ---
 
-## How to Use Postman Collection
+## 📮 How to Use Postman Collection
 
 A Postman collection is provided to quickly test all API endpoints for the **Smart Resume Analyzer API**.
 
-**Steps to Import:**
+### Steps to Import:
 
 1. Download the Postman collection JSON: [`Smart_Resume_Analyzer.postman_collection.json`](path/to/Smart_Resume_Analyzer.postman_collection.json)
 2. Open **Postman**.
 3. Click **Import → Raw Text → Paste the JSON above → Import** (or import via file).
-4. The collection **“Smart Resume Analyzer API”** will appear in Postman.
+4. The collection **"Smart Resume Analyzer API"** will appear in Postman.
 
 ---
 
-**Test the APIs:**
+### Test the APIs:
 
-### ✅ Health Check
+#### ✅ Health Check
 - **GET** `/api/health`  
 - **Purpose:** Verify that the backend is running.
 - **Response Example:**
@@ -793,11 +792,11 @@ A Postman collection is provided to quickly test all API endpoints for the **Sma
   "data": "Resume Analyzer API is running!",
   "error": null
 }
----
+```
 
 ---
 
-## ATS Scoring Logic
+## 🎯 ATS Scoring Logic
 
 ### Overview
 The ATS (Applicant Tracking System) score is a numerical representation (0-100) of resume quality based on the presence and completeness of key resume components.
@@ -900,7 +899,7 @@ The system generates targeted suggestions based on missing components:
 
 ---
 
-## Sample Request & Response Payloads
+## 📝 Sample Request & Response Payloads
 
 ### 1. Analyze Resume - Complete Example
 
@@ -1294,7 +1293,7 @@ GET http://localhost:8080/api/health
 
 ---
 
-## Database Schema
+## 🗄️ Database Schema
 
 ### ResumeAnalysisEntity Table
 
@@ -1357,7 +1356,7 @@ CREATE TABLE job_match (
 
 ---
 
-## Error Handling
+## ⚠️ Error Handling
 
 ### Exception Hierarchy
 
@@ -1449,7 +1448,7 @@ All error responses follow this structure:
 
 ---
 
-## Contributing
+## 🤝 Contributing
 
 We welcome contributions to improve the Resume Analyzer API!
 
@@ -1503,13 +1502,13 @@ We welcome contributions to improve the Resume Analyzer API!
 
 ---
 
-## License
+## 📄 License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 ---
 
-## Acknowledgments
+## 🙏 Acknowledgments
 
 - Spring Boot team for the excellent framework
 - PostgreSQL community for robust database support
