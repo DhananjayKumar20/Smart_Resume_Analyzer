@@ -764,6 +764,7 @@ GET /api/health
   "data": "Resume Analyzer API is running!",
   "error": null
 }
+
 ```
 
 ---
@@ -792,7 +793,9 @@ A Postman collection is provided to quickly test all API endpoints for the **Sma
   "data": "Resume Analyzer API is running!",
   "error": null
 }
+---
 
+---
 
 ## ATS Scoring Logic
 
