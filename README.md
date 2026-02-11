@@ -284,11 +284,80 @@ All API responses follow a consistent structure:
 
 ---
 
+### 💻 cURL Examples
+
+Below are complete cURL commands for testing all API endpoints:
+
+#### 1. Analyze Resume
+```bash
+curl -X POST http://localhost:8080/api/analyze-resume \
+  -H "Content-Type: application/json" \
+  -d '{
+    "resumeText": "EXPERIENCE\n• Retax Infotech Pvt Ltd September 2025 - January 2026\nJava Developer Intern Remote\n◦ Developed a Zoho-type Cloud Accounting Bookkeeping Platform using Java, Spring Boot, Hibernate, MySQL.\nPROJECTS\n• Betting Service Platform March 2025\nTools: Java, MySQL, Spring Boot, Hibernate, REST API, Microservices, Kafka, Docker\nTECHNICAL SKILLS\n• Programming Languages/Web Technologies: C/C++, Java, HTML, CSS\n• Frameworks/Tools: Spring Boot, Spring Security, OAuth2, Spring Data JPA, REST API, Kafka, Docker\nEDUCATION\n• Meerut Institute of Engineering and Technology (MIET) September 2024 - July 2026\nMaster of Computer Applications(MCA) Meerut, India"
+  }'
+```
+
+#### 2. Compare Job Description
+```bash
+curl -X POST http://localhost:8080/api/compare-job-description \
+  -H "Content-Type: application/json" \
+  -d '{
+    "resumeText": "TECHNICAL SKILLS\n• Programming Languages: Java, Spring Boot, Hibernate, REST API, Microservices, Docker, MySQL, PostgreSQL\nEXPERIENCE\n• SolSoN Tech Pvt Ltd March 2025 - June 2025\nJava Developer Intern",
+    "jobDescriptionText": "We are looking for a skilled Java Developer.\n\nRequired Skills:\n- Java, Spring Boot, RESTful APIs\n- Microservices architecture\n- Hibernate / JPA\n- SQL / Database optimization\n- Unit testing and integration testing\n- CI/CD and Agile methodology"
+  }'
+```
+
+#### 3. Get All Resumes (Paginated)
+```bash
+curl -X GET "http://localhost:8080/api/analyze-resume?page=0&size=10"
+```
+
+#### 4. Get Resume by ID
+```bash
+curl -X GET http://localhost:8080/api/8
+```
+
+#### 5. Get All Job Comparisons (Paginated)
+```bash
+curl -X GET "http://localhost:8080/api/compare-job-description?page=0&size=10"
+```
+
+#### 6. Get Job Match by ID
+```bash
+curl -X GET http://localhost:8080/api/job-matches/4
+```
+
+#### 7. Delete Resume Analysis
+```bash
+curl -X DELETE http://localhost:8080/api/analyze-resume/8
+```
+
+#### 8. Delete Job Match
+```bash
+curl -X DELETE http://localhost:8080/api/compare-job-description/4
+```
+
+#### 9. Health Check
+```bash
+curl -X GET http://localhost:8080/api/health
+```
+
+---
+
 ### 1. Analyze Resume
 
 Analyzes resume text to extract skills, experience, education, projects, and calculates ATS score.
 
 **Endpoint:** `POST /api/analyze-resume`
+
+**cURL Example:**
+```bash
+curl -X POST http://localhost:8080/api/analyze-resume \
+  -H "Content-Type: application/json" \
+  -d '{
+    "resumeText": "EXPERIENCE\n• Retax Infotech Pvt Ltd September 2025 - January 2026\nJava Developer Intern Remote\nPROJECTS\n• Betting Service Platform March 2025\nTECHNICAL SKILLS\n• Programming Languages: Java, Spring Boot, Docker\nEDUCATION\n• MCA 2024-2026"
+  }'
+```
 
 **Request Body:**
 ```json
@@ -367,6 +436,16 @@ Compares resume skills with job description requirements and provides match perc
 
 **Endpoint:** `POST /api/compare-job-description`
 
+**cURL Example:**
+```bash
+curl -X POST http://localhost:8080/api/compare-job-description \
+  -H "Content-Type: application/json" \
+  -d '{
+    "resumeText": "TECHNICAL SKILLS\n• Java, Spring Boot, Hibernate, Docker, MySQL",
+    "jobDescriptionText": "Required Skills: Java, Spring Boot, Kubernetes, CI/CD"
+  }'
+```
+
 **Request Body:**
 ```json
 {
@@ -436,6 +515,11 @@ Retrieves all resume analyses with pagination support.
 
 **Endpoint:** `GET /api/analyze-resume`
 
+**cURL Example:**
+```bash
+curl -X GET "http://localhost:8080/api/analyze-resume?page=0&size=10"
+```
+
 **Query Parameters:**
 - `page` (optional, default: 0) - Page number (0-indexed)
 - `size` (optional, default: 10) - Number of items per page
@@ -501,6 +585,11 @@ Retrieves a specific resume analysis by its ID.
 
 **Endpoint:** `GET /api/{id}`
 
+**cURL Example:**
+```bash
+curl -X GET http://localhost:8080/api/8
+```
+
 **Path Parameters:**
 - `id` (required) - Resume analysis ID
 
@@ -561,6 +650,11 @@ Retrieves all job description comparisons with pagination.
 
 **Endpoint:** `GET /api/compare-job-description`
 
+**cURL Example:**
+```bash
+curl -X GET "http://localhost:8080/api/compare-job-description?page=0&size=10"
+```
+
 **Query Parameters:**
 - `page` (optional, default: 0) - Page number
 - `size` (optional, default: 10) - Items per page
@@ -617,6 +711,11 @@ Retrieves a specific job comparison by its ID.
 
 **Endpoint:** `GET /api/job-matches/{id}`
 
+**cURL Example:**
+```bash
+curl -X GET http://localhost:8080/api/job-matches/4
+```
+
 **Path Parameters:**
 - `id` (required) - Job match ID
 
@@ -671,6 +770,11 @@ Deletes a resume analysis by ID.
 
 **Endpoint:** `DELETE /api/analyze-resume/{id}`
 
+**cURL Example:**
+```bash
+curl -X DELETE http://localhost:8080/api/analyze-resume/8
+```
+
 **Path Parameters:**
 - `id` (required) - Resume analysis ID
 
@@ -717,6 +821,11 @@ Deletes a job comparison by ID.
 
 **Endpoint:** `DELETE /api/compare-job-description/{id}`
 
+**cURL Example:**
+```bash
+curl -X DELETE http://localhost:8080/api/compare-job-description/4
+```
+
 **Path Parameters:**
 - `id` (required) - Job match ID
 
@@ -752,6 +861,11 @@ DELETE /api/compare-job-description/4
 Verifies that the API is running and accessible.
 
 **Endpoint:** `GET /api/health`
+
+**cURL Example:**
+```bash
+curl -X GET http://localhost:8080/api/health
+```
 
 **Example Request:**
 ```
@@ -1519,3 +1633,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 **Last Updated:** February 11, 2026  
 **Version:** 1.0.0  
 **Author:** Dhananjay
+
