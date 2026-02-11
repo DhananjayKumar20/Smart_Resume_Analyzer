@@ -768,6 +768,32 @@ GET /api/health
 
 ---
 
+## How to Use Postman Collection
+
+A Postman collection is provided to quickly test all API endpoints for the **Smart Resume Analyzer API**.
+
+**Steps to Import:**
+
+1. Download the Postman collection JSON: [`Smart_Resume_Analyzer.postman_collection.json`](path/to/Smart_Resume_Analyzer.postman_collection.json)
+2. Open **Postman**.
+3. Click **Import → Raw Text → Paste the JSON above → Import** (or import via file).
+4. The collection **“Smart Resume Analyzer API”** will appear in Postman.
+
+---
+
+**Test the APIs:**
+
+### ✅ Health Check
+- **GET** `/api/health`  
+- **Purpose:** Verify that the backend is running.
+- **Response Example:**
+```json
+{
+  "data": "Resume Analyzer API is running!",
+  "error": null
+}
+
+
 ## ATS Scoring Logic
 
 ### Overview
