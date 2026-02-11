@@ -845,6 +845,8 @@ private int calculateAtsScore(List<String> skills, String experience,
 }
 ```
 
+---
+
 ### Score Interpretation
 
 | Score Range | Rating | Interpretation |
